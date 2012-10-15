@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		.imgani{
+			background-image: url('pic1.jpg');
+			width: 450px;
+			height: 300px;
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			-webkit-transition: all 5s;
+		}
+
+		.step1 .imgani{
+			background-position: 0% 80%;
+			background-size: 250% 250%;
+		}
+
+		.step2 .imgani{
+			background-position: 0% 40%;
+			background-size: 110% 110%;
+		}
+
+		.step3 .imgani{
+			background-position: 80% 20%;
+			background-size: 250% 250%;
+		}
+
+	</style>
+</head>
+<body>
+	<div class='step1' id="anihelper1">
+		<div class="imgani"></div>
+	</div>
+	<script type="text/javascript">
+		var ah = document.getElementById('anihelper1');
+		function ani1step(n){
+			ah.className = 'step'+n;
+		}
+
+		aniStart = function(){
+			ani1step(2);
+			setTimeout(function(){
+				
+				ani1step(3)
+			},5000);
+		}
+
+		window.onload = aniStart;
+
+	</script>
+</body>
+</html>
